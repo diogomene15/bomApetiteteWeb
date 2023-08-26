@@ -1,8 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+:root{
+    --body-background-color: #eeeced;
+    --menu-font-color: #363535;
+    --menu-font-color-hover: #000000;
+    --menu-font-background-hover: #6969693f;
+    --primary-button-background-color: #C95959;
+}
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+
+    font-family: 'Lora', serif;
+}
+body{
+    height: 200vh;
+    background-color: var(--body-background-color);
 }
 .horizontal-navbar{
     display: flex;
@@ -12,7 +26,7 @@
     width: 100%;
     padding: 1rem;
     border-bottom: solid #5a5a5a 1px;
-
+    border-radius: 0 0 4px 4px;
 }
 .navbar-logo-container{
     display: flex;
@@ -41,14 +55,15 @@ a{
 }
 .navbar-anchors-list a{
     padding: .5rem;
-    color: #363535;
     background-color: transparent;
+    color: var(--menu-font-color);
+    font-weight: 500;
     cursor: pointer;
-    transition: all .3s ease-in-out;
+    transition: all .2s ease-in-out;
 }
 .navbar-anchors-list a:hover{
-    color: black;
-    background-color: rgba(141, 141, 141, 0.397);
+    color: var(--menu-font-color-hover);
+    background-color: var(--menu-font-background-hover);
     border-radius: 5px;
 
 }
@@ -60,5 +75,13 @@ a{
     #navbar-logo-img{
         width: 1.5rem;
     }
-
+    .navbar-anchors-list{
+        gap: 0rem;
+    }
+    .navbar-anchors-list a{
+        font-size: .9rem;
+    }
+    #navbar-logo-title{
+        font-size: 1rem;
+    }
 }
