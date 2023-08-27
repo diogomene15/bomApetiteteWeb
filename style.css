@@ -32,6 +32,11 @@ header {
 nav {
     background-color: var(--body-background-color);
 }
+hr{
+    border: none;
+    border-top: solid #5a5a5a 1px;
+    width: 100%;
+}
 .horizontal-navbar {
     display: flex;
     flex-direction: row;
@@ -88,9 +93,13 @@ a {
 
 section {
     margin-top: 2rem;
-    height: 94vh;
+    /* height: 94vh; */
     scroll-margin-top: 6rem;
     scroll-snap-margin-top: 6rem; /* iOS 11 and older */
+    margin-bottom: 5rem;
+}
+#menu{
+    height: fit-content;
 }
 .section-title {
     font-size: 2rem;
@@ -99,7 +108,184 @@ section {
     margin-bottom: 1rem;
 }
 
+.menu-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 2rem 0 2rem;
+    padding: 0 10rem;
+    align-items: center;
+}
+.menu-item.reversed{
+    flex-direction: row-reverse;
+}
+
+.menu-item.reversed h2.menu-item-detail-title{
+    text-align: right;
+}
+
+.menu-item-image-container{
+    width: 40rem;
+    height: 25rem;
+}
+.menu-item-image {
+    text-align: center;
+    margin: 0 auto;
+    max-height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+.menu-item-detail{
+    flex: 1;
+    padding-top: 2rem;
+    min-width: 45%
+}
+.menu-item-detail-title{
+    font-family: "Dancing Script", cursive;
+    margin-bottom: 2rem;
+}
+p{
+    text-align: justify;
+    margin-bottom: 1rem;
+    line-height: 180%;
+}
+.sobre-container{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 10rem;
+}
+.sobre-imagem-container{
+    display: flex;
+    justify-content: center;
+    height: fit-content;
+    width: 40rem;
+}
+.sobre-imagem{
+    width: 30rem;
+    border-radius: 5px;
+}
+.sobre-descricao{
+    flex: 1;
+    padding-top: 2rem;
+    min-width: 45%
+}
+
+.form-container{
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 10rem;
+    align-items: center;
+}
+#contact-form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.form-input{
+    padding: 0.7rem 0.5rem;
+    background-color: var(--body-background-color);
+    border: solid #5a5a5a 1px;
+    font-size: 1rem;
+    outline: none;
+}
+.form-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem
+}
+.form-row input{
+    flex: 1;
+}
+
+#contact-form-submit{
+    width: 10rem;
+    padding: 0.7rem 0.5rem;
+    background-color: var(--primary-button-background-color);
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+#contact-form-submit:hover{
+    background-color: hsl(32, 83%, 50%);
+}
+
+textarea{
+    resize: vertical;
+    width: 100%;
+    height: 10rem;
+    min-height: 10rem;
+    max-height: 30rem;
+}
+
+@media only screen and (max-width: 1483px) {
+    .menu-item-detail-title{
+        text-align: center !important;
+    }
+    .sobre-container{
+        gap:0;
+    }
+    .sobre-imagem{
+        height: 30rem;
+        object-fit: cover;
+    }
+}
+@media only screen and (max-width: 919px) {
+    .sobre-imagem{
+        height: 20rem;
+        width: 20rem;
+    }
+    .form-container{
+        padding: 0 2rem;
+    }
+    .menu-item{
+        padding: 0 5rem;
+    }
+    .sobre-container{
+        padding: 0 5rem;
+    }
+    .menu-item-image-container{
+        width: 100%;
+        height: 20rem;
+    }
+}
+@media only screen and (max-width: 639px) {
+    
+    .menu-item{
+        padding: 0 2rem;
+    }
+    .sobre-container{
+        padding: 0 2rem;
+    }
+    .menu-item-image-container{
+        width: 100%;
+        height: 15rem;
+    }
+}
+
 @media only screen and (max-width: 500px) {
+    .sobre-imagem{
+        height: 15rem;
+        width: 15rem;
+    }
+    .form-container{
+        padding: 0 1rem;
+    }
+    .form-row{
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
     .horizontal-navbar {
         height: 4rem;
     }
@@ -117,7 +303,23 @@ section {
     }
 }
 
+@media only screen and (max-width: 424px) {
+    p{
+        font-size: .9rem;
+    }
+}
+
 @media only screen and (max-width: 372px) {
+    .sobre-imagem{
+        height: 10rem;
+        width: 10rem;
+    }
+    .menu-item{
+        padding: 0 1.5rem;
+    }
+    .sobre-container{
+        padding: 0 1.5rem;
+    }
     #navbar-logo-title {
         font-size: 0.8rem;
     }
@@ -128,6 +330,18 @@ section {
 }
 
 @media only screen and (max-width: 312px) {
+
+    p{
+        font-size: .8rem;
+    }
+    .menu-item-image-container{
+        width: 100%;
+        height: 10rem;
+    }
+    .form-input{
+        padding: 0.5rem 0.5rem;
+        font-size: .8rem;
+    }
     .horizontal-navbar {
         padding: 1rem 0.5rem;
     }
